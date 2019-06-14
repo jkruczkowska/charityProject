@@ -11,5 +11,5 @@ public class CategorySrv {
 
     CategoryRepository categoryRepository;
 
-//    List<Category> categories = categoryRepository.findAll();
+    List<Category> categories = categoryRepository.findAll();
 }

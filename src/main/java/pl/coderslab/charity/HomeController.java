@@ -18,7 +18,7 @@ public class HomeController {
 
 //    InstitutionRepository institutionRepository;
     DonationRepository donationRepository;
-    @Autowired
+
     InstitutionSrv institutionSrv;
 
     public HomeController(InstitutionSrv institutionSrv) {
@@ -28,7 +28,7 @@ public class HomeController {
 
     @RequestMapping("/")
     public String homeAction(Model model){
-        List<Institution> institutions = institutionSrv.findAll();
+        List<Institution> institutions = institutionSrv.findAllInstitution();
         model.addAttribute("institutions", institutions);
 
         List<Donation> donations = donationRepository.findAll();

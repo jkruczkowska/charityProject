@@ -18,7 +18,7 @@
     <div class="container container--85">
         <div class="stats--item">
             <em><fmt:parseNumber var="intValue" integerOnly="true"
-                                             type="number" value="${donationsBagsCount}" />
+                                             type="number" value="${noBags}" />
             <c:out value="${intValue}"/></em>
 
             <h3>Oddanych worków</h3>

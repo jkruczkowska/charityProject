@@ -1,5 +1,6 @@
 package pl.coderslab.charity;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,7 +18,12 @@ public class HomeController {
 
 //    InstitutionRepository institutionRepository;
     DonationRepository donationRepository;
+    @Autowired
     InstitutionSrv institutionSrv;
+
+    public HomeController(InstitutionSrv institutionSrv) {
+        this.institutionSrv = institutionSrv;
+    }
 
 
     @RequestMapping("/")

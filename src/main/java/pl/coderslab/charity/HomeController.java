@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import pl.coderslab.charity.model.Donation;
 import pl.coderslab.charity.model.Institution;
 import pl.coderslab.charity.repository.DonationRepository;
-import pl.coderslab.charity.repository.InstitutionRepository;
+import pl.coderslab.charity.service.DonationSrv;
 import pl.coderslab.charity.service.InstitutionSrv;
 
 import java.util.List;
@@ -17,12 +17,13 @@ import java.util.List;
 public class HomeController {
 
 //    InstitutionRepository institutionRepository;
-    DonationRepository donationRepository;
-
+    @Autowired
+    DonationSrv donationSrv;
     InstitutionSrv institutionSrv;
 
-    public HomeController(InstitutionSrv institutionSrv) {
+    public HomeController(InstitutionSrv institutionSrv, DonationSrv donationSrv) {
         this.institutionSrv = institutionSrv;
+        this.donationSrv = donationSrv;
     }
 
 
@@ -31,7 +32,7 @@ public class HomeController {
         List<Institution> institutions = institutionSrv.findAllInstitution();
         model.addAttribute("institutions", institutions);
 
-        List<Donation> donations = donationRepository.findAll();
+        List<Donation> donations = donationSrv.findAllDonations();
         model.addAttribute("donations", donations);
 
         int noBags = 0;

@@ -15,76 +15,83 @@
 </head>
 <body>
 <jsp:include page="header.jsp"/>
-<%--<form:form>--%>
-<table>
-    <tr>
-        <td>Choose category:</td>
-        <br>
-        <tr>
-        <c:forEach items="${categories}" var="cat" varStatus="status">
-        <td><form:checkbox path="categories" value="${cat}" />
-        <c:out value="${cat.name}" /></td>
+<div class="contact">
+    <div class="slogan container container--90">
+        <div class="slogan--item">
+            <h1>
+                Zacznij pomagać!<br/>
+                Wypełnij formularz.
+            </h1>
+            <form class="form--contact">
+                <%--<form:form method="post">--%>
+                <table>
+                    <tr>
+                        <td>Choose category:
 
-    </c:forEach>
-</tr>
-        <%--<td>--%>
-            <%--<form:checkboxes path="categories" items="${categories}"/>--%>
-        <%--</td>--%>
-    </tr>
-    <tr>
-        <td>Choose institution:</td>
-        <br>
-        <td>
-            <form:select  path="institutions">
-                <form:option value="NONE"> --SELECT--</form:option>
-                <form:options items="${institutions}"></form:options>
-            </form:select>
-        </td>
-    </tr>
-    <tr>
-        <td>Choose zipCode:</td>
-        <td>
-        <form:input path="donation.zipCode"/>
-        </td>
-    </tr>
-    <tr>
-        <td>Choose street:</td>
-        <td>
-        <form:input path="donation.street" />
-        </td>
-    </tr>
-    <tr>
-        <td>Choose city:</td>
-        <td>
-        <form:input path="donation.city"/>
-        </td>
-    </tr>
-    <tr>
-        <td>Choose quantity:</td>
-        <td>
-        <form:input path="donation.quantity"/>
-        </td>
-    </tr>
-    <tr>
-        <td>Choose pickUpComment:</td>
-        <td>
-        <form:textarea path="donation.pickUpComment"/>
-        </td>
-    </tr>
-    <tr>
-        <td>Choose pickUpDate:</td>
-        <td>
-        <form:input type="date" path="donation.pickUpDate"/>
-        </td>
-    </tr>
-    <tr>
-        <td>Choose pickUpTime:</td>
-        <td>
-        <form:input type="time" path="donation.pickUpTime" />
-        </td>
-    </tr>
-</table>
-<%--</form:form>--%>
+
+                    <c:forEach items="${categories}" var="cat" varStatus="status">
+
+                                <form:checkbox path="categories" value="${cat}"/>
+                                <c:out value="${cat.name}"/>
+
+                    </c:forEach>
+
+                    <%--<td>--%>
+                    <%--<form:checkboxes path="categories" items="${categories}"/>--%>
+                    </td>
+                    </tr>
+                    <tr>
+                        <td>Choose institution:
+                            <form:select path="institutions">
+                                <form:option value="NONE"> --SELECT--</form:option>
+                                <c:forEach items="${institutions}" var="inst">
+                                    <form:option value="${inst.name}"></form:option>
+                                </c:forEach>
+                            </form:select>
+                        </td>
+                    </tr>
+                    <br>
+                    <tr>
+                        <td>Choose zipCode:
+                            <form:input path="donation.zipCode" placeholder="Kod pocztowy"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Choose street:
+                            <form:input path="donation.street" placeholder="Ulica"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Choose city:
+                            <form:input path="donation.city" placeholder="Miasto"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Choose quantity:
+                            <form:input path="donation.quantity" placeholder="Liczba workow"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Choose pickUpComment:
+                            <form:textarea path="donation.pickUpComment" placeholder="Komentarz"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Choose pickUpDate:
+                            <form:input type="date" path="donation.pickUpDate"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Choose pickUpTime:
+                            <form:input type="time" path="donation.pickUpTime"/>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+            <%--</form:form>--%>
+        </div>
+    </div>
+</div>
 <jsp:include page="footer.jsp"/>
 </body>
 </html>

@@ -6,7 +6,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import pl.coderslab.charity.model.Donation;
 import pl.coderslab.charity.model.Institution;
-import pl.coderslab.charity.repository.DonationRepository;
 import pl.coderslab.charity.service.DonationSrv;
 import pl.coderslab.charity.service.InstitutionSrv;
 
@@ -29,7 +28,7 @@ public class HomeController {
 
     @RequestMapping("/")
     public String homeAction(Model model){
-        List<Institution> institutions = institutionSrv.findAllInstitution();
+        List<Institution> institutions = institutionSrv.findAllInstitutions();
         model.addAttribute("institutions", institutions);
 
         List<Donation> donations = donationSrv.findAllDonations();
@@ -41,6 +40,10 @@ public class HomeController {
         }
 
         model.addAttribute("noBags", noBags);
+
+        int noOfInstitutions = institutions.size();
+
+        model.addAttribute("noOfInstitutions", noOfInstitutions);
         return "index";
     }
 }

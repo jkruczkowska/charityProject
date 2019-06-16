@@ -15,7 +15,7 @@ public class InstitutionSrv {
 
 //    List<Institution> institutions = institutionRepository.findAll();
 
-    public List<Institution> findAllInstitution() {
+    public List<Institution> findAllInstitutions() {
         return institutionRepository.findAll();
     }
 

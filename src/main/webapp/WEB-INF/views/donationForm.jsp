@@ -20,9 +20,16 @@
     <tr>
         <td>Choose category:</td>
         <br>
-        <td>
-            <form:checkboxes path="categories" items="${categories}"/>
-        </td>
+        <tr>
+        <c:forEach items="${categories}" var="cat" varStatus="status">
+        <td><form:checkbox path="categories" value="${cat}" />
+        <c:out value="${cat.name}" /></td>
+
+    </c:forEach>
+</tr>
+        <%--<td>--%>
+            <%--<form:checkboxes path="categories" items="${categories}"/>--%>
+        <%--</td>--%>
     </tr>
     <tr>
         <td>Choose institution:</td>

@@ -10,7 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     <title>Document</title>
 
-    <link rel="stylesheet" href="<c:url value="../../resources/css/style.css"/>"/>
+    <link rel="stylesheet" href="<c:url value="resources/css/style.css"/>"/>
 </head>
 <body>
 <jsp:include page="header.jsp"/>
@@ -18,7 +18,7 @@
     <div class="container container--85">
         <div class="stats--item">
             <em><fmt:parseNumber var="intValue" integerOnly="true"
-                                             type="number" value="${donationsBagsCount}" />
+                                             type="number" value="${noBags}" />
             <c:out value="${intValue}"/></em>
 
             <h3>Oddanych worków</h3>
@@ -27,7 +27,7 @@
         </div>
 
         <div class="stats--item">
-            <em><c:out value="${donationsCount}" /></em>
+            <em><c:out value="${noOfInstitutions}" /></em>
             <h3>Wspartych organizacji</h3>
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam magnam, sint nihil cupiditate quas
                 quam.</p>

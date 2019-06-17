@@ -15,5 +15,5 @@ public interface DonationRepository extends JpaRepository<Donation, Integer> {
     @Override
     Donation getOne(Integer id);
 
-    Donation findByCity(String city);
+//    Donation findByCity(String city);
 }

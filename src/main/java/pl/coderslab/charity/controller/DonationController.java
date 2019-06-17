@@ -38,7 +38,7 @@ public class DonationController {
     Donation donation = new Donation();
     model.addAttribute("donation", donation);
 
-    return "donationForm";
+    return "form";
 }
 
 }

@@ -12,6 +12,8 @@ import java.util.List;
 @Data
 public class Donation {
 
+    public Donation() {}
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;

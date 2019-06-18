@@ -157,6 +157,10 @@
             <div class="form-group form-group--inline">
               <label>
                 Liczba 60l worków:
+                <form:form method="post" modelAttribute="donation">
+                  <form:input path="donation.quantity" />
+                  <form:input path="donation.address" />
+                </form:form>
                 <input type="number" name="bags" step="1" min="1" />
               </label>
             </div>

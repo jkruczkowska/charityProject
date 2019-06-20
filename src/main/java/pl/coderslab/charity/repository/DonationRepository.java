@@ -9,11 +9,8 @@ import java.util.List;
 @Repository
 public interface DonationRepository extends JpaRepository<Donation, Integer> {
 
-    @Override
-    List<Donation> findAll();
 
-    @Override
-    Donation getOne(Integer id);
+    List<Donation> findAllDonations();
 
-//    Donation findByCity(String city);
+    void saveDonation(Donation donation);
 }

@@ -9,11 +9,11 @@ import java.util.List;
 
 @AllArgsConstructor
 @Service
-public class DonationSrv{
+public class DonationSrv {
 
     private final DonationRepository donationRepository;
 
-    
+
     public List<Donation> findAllDonations() {
         return donationRepository.findAll();
     }

@@ -53,6 +53,7 @@ public class DonationController {
 
     @RequestMapping("/formConf")
     public String showConfirmation(Model model) {
+        donationSrv.saveDonation(new Donation());
         return "form-confirmation";
     }
 

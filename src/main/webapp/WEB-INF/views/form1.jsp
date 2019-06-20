@@ -67,6 +67,7 @@
 <section class="">
         <div class="form--steps-container">
             <div class="form-group form-group--checkbox">
+                <form:form modelAttribute="donation" method="post">
                 <h3>Zaznacz co chcesz oddać:</h3>
                 <c:forEach var="cat" items="${categories}">
                     <div>
@@ -90,7 +91,7 @@
 
     <div class="form-group form-group--checkbox">
         <h3>Wpisz szczegoły odbioru:</h3>
-        <form:form modelAttribute="donation" method="post">
+
         <p>
             <form:label path="zipCode" title="zipcode">Zip code: </form:label>
             <form:input path="zipCode"/>
@@ -118,10 +119,11 @@
         <p>
             <form:label path="pickUpTime" title="time">Time: </form:label>
             <form:input type="time" path="pickUpTime"/>
-            </form:form>
+
         </p>
     </div>
         </div>
+    </form:form>
 </section>
 <section class="form--steps">
     <div class="form--steps-instructions">

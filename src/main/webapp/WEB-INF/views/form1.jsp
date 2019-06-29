@@ -65,64 +65,70 @@
 </header>
 
 <section class="">
-        <div class="form--steps-container">
-            <div class="form-group form-group--checkbox">
-                <form:form modelAttribute="donation" method="post">
-                <h3>Zaznacz co chcesz oddać:</h3>
-                <c:forEach var="cat" items="${categories}">
-                    <div>
-                        <p>
-                        <form:checkbox path="categories" value="${cat}"/>
-                        <c:out value="${cat.name}"/>
-                        </p>
-                    </div>
-                </c:forEach>
+    <div class="form--steps-container">
+        <div class="form-group form-group--checkbox">
+            <%--<form:form method="post" modelAttribute="categories">--%>
+            <h3>Zaznacz co chcesz oddać:</h3>
+            <c:forEach var="cat" items="${categories}">
+            <div>
+            <p>
+            <form:checkbox path="categories" value="${cat}"/>
+            <c:out value="${cat.name}"/>
+            </p>
             </div>
-            <div class="form-group form-group--checkbox">
-                <h3>Wybierz organizację, której chcesz pomóc:</h3>
-                <form:select path="institutions">
-                    <form:option value="NONE">Select institution</form:option>
-                    <c:forEach var="inst" items="${institutions}">
-                        <form:option value="${inst.name}"/>
-                    </c:forEach>
-                </form:select>
-            </div>
-
-
-    <div class="form-group form-group--checkbox">
-        <h3>Wpisz szczegoły odbioru:</h3>
-
-        <p>
-            <form:label path="zipCode" title="zipcode">Zip code: </form:label>
-            <form:input path="zipCode"/>
-        </p>
-        <p>
-            <form:label path="street" title="street">Street: </form:label>
-            <form:input path="street"/>
-        </p>
-        <p>
-            <form:label path="city" title="city">City: </form:label>
-            <form:input path="city"/>
-        </p>
-        <p>
-            <form:label path="quantity" title="zipcode">Quantity: </form:label>
-            <form:input path="quantity"/>
-        </p>
-        <p>
-            <form:label path="pickUpComment" title="comment">Comment: </form:label>
-            <form:textarea path="pickUpComment"/>
-        </p>
-        <p>
-            <form:label path="pickUpDate" title="date">Date: </form:label>
-            <form:input type="date" path="pickUpDate"/>
-        </p>
-        <p>
-            <form:label path="pickUpTime" title="time">Time: </form:label>
-            <form:input type="time" path="pickUpTime"/>
-
-        </p>
-    </div>
+            </c:forEach>
+            <%--</form:form>--%>
         </div>
+        <div class="form-group form-group--checkbox">
+            <%--<form:form>--%>
+            <h3>Wybierz organizację, której chcesz pomóc:</h3>
+            <form:select path="institutions">
+            <form:option value="NONE">Select institution</form:option>
+            <c:forEach var="inst" items="${institutions}">
+            <form:option value="${inst.name}"/>
+            </c:forEach>
+            </form:select>
+            <%--</form:form>--%>
+        </div>
+
+
+        <div class="form-group form-group--checkbox">
+            <form:form modelAttribute="donation" method="post">
+            <h3>Wpisz szczegoły odbioru:</h3>
+
+            <p>
+                <form:label path="zipCode" title="zipcode">Zip code: </form:label>
+                <form:input path="zipCode"/>
+            </p>
+            <p>
+                <form:label path="street" title="street">Street: </form:label>
+                <form:input path="street"/>
+            </p>
+            <p>
+                <form:label path="city" title="city">City: </form:label>
+                <form:input path="city"/>
+            </p>
+            <p>
+                <form:label path="quantity" title="zipcode">Quantity: </form:label>
+                <form:input path="quantity"/>
+            </p>
+            <p>
+                <form:label path="pickUpComment" title="comment">Comment: </form:label>
+                <form:textarea path="pickUpComment"/>
+            </p>
+            <p>
+                <form:label path="pickUpDate" title="date">Date: </form:label>
+                <form:input type="date" path="pickUpDate"/>
+            </p>
+            <p>
+                <form:label path="pickUpTime" title="time">Time: </form:label>
+                <form:input type="time" path="pickUpTime"/>
+
+            </p>
+            <p><form:button
+                    type="submit">Submit</form:button></p>
+        </div>
+    </div>
     </form:form>
 </section>
 <section class="form--steps">

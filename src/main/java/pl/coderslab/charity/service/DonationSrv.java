@@ -20,7 +20,7 @@ public class DonationSrv {
 
 
     public void saveDonation(Donation donation) {
-
+        donationRepository.save(donation);
     }
 
 
